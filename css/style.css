@@ -1,0 +1,19 @@
+ /* Empty CSS file for your own CSS */
+
+ .margin-top-50 {
+     margin-top: 50px;
+ }
+
+ .white-space-true {
+     white-space: nowrap;
+ }
+
+ .margin-right-15{
+     margin-right: 15px;
+ }
+ .bg-white{
+     background-color: white;
+ }
+ .boder-black{
+     border-block-color: black;
+ }
