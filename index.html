@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
 	<meta charset="utf-8">
@@ -9,7 +9,7 @@
 	<title>Bootstrap 4, from LayoutIt!</title>
 
 	<meta name="description" content="Source code generated using layoutit.com">
-	<meta name="author" content="LayoutIt!">
+	<meta name="author" content="Eduardo Américo">
 
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
@@ -18,7 +18,7 @@
 
 <body>
 
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row  margin-top-50">
 			<div class="col-md-12">
 
@@ -28,12 +28,24 @@
 					</h2>
 					<br>
 					<div class="row">
-						<div class="col col-12">
-							<div class="input-group">
-								<h5 class="margin-right-15">Digite o seu algoritmo:</h5>
+						<div class="col-12">
+							<div class="input-group " style="margin-bottom: 15px;">
+								<h5 class="margin-right-15 padding-botton-10">Digite o seu algoritmo:</h5>
 								<input class="form-control input-400 margin-right-15" id="algoritmo" type="text"
 									placeholder="Algoritmo">
-								<button class="btn btn-success" onclick="rodar('tadelaDeAcao')">Salvar</button>
+								<!-- <button class="btn btn-outline-primary" onclick="step()">Continuar</button> -->
+
+							</div>
+
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="input-group">
+								<h5 class="margin-right-15 padding-botton-10">Número maximo de ações:</h5>
+								<input class="form-control input-400 margin-right-15" id="acoes" type="text"
+									placeholder="Número de Maximo de Ações">
+								<button class="btn btn-success" onclick="rodar('tadelaDeAcao')">Rodar</button>
 								<!-- <button class="btn btn-outline-primary" onclick="step()">Continuar</button> -->
 
 							</div>
@@ -43,7 +55,7 @@
 
 				</div>
 				<div class="row">
-					<div class="col col-6">
+					<div class="col-12">
 						<div class="jumbotron bg-white">
 							<h2>
 								Tabela de Ação
@@ -61,73 +73,75 @@
 							</div>
 							<br>
 							<div class="row">
-								<div class="col col-12 table-responsive">
-									<table id="tadelaDeAcao" class="table table-bordered table-striped table-dark">
+								<div class="col-12 table-responsive padding-0">
+									<div class="tamanho-maximo">
+										<table id="tadelaDeAcao" class="table table-bordered table-striped table-dark ">
 											<tbody>
-													<tr>
-														<td>#</td>
-														<td>&gt;</td>
-														<td>_</td>
-														<td>*</td>
-														<td contenteditable="true">A</td>
-														<td contenteditable="true"></td>
-													</tr>
-													<tr>
-														<td>1 </td>
-														<td contenteditable="true">1;&gt;;D</td>
-														<td contenteditable="true">2;_;E</td>
-														<td contenteditable="true">1;A;D</td>
-														<td contenteditable="true">1;A;D</td>
-														<td contenteditable="true"></td>
-													</tr>
-													<tr>
-														<td>2 </td>
-														<td contenteditable="true">3;*;E</td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true">2;*;E</td>
-														<td contenteditable="true"></td>
-													</tr>
-													<tr>
-														<td contenteditable="true">3</td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true">4;*;E</td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-													</tr>
-													<tr>
-														<td contenteditable="true">4</td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true">5;&gt;;D</td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-													</tr>
-													<tr>
-														<td contenteditable="true">5</td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-													</tr>
-												</tbody>
-											
-									</table>
+												<tr>
+													<td>#</td>
+													<td>&gt;</td>
+													<td>_</td>
+													<td>*</td>
+													<td contenteditable="true">A</td>
+													<td contenteditable="true"></td>
+												</tr>
+												<tr>
+													<td>1 </td>
+													<td contenteditable="true">1;&gt;;D</td>
+													<td contenteditable="true">1;A;E</td>
+													<td contenteditable="true">1;A;D</td>
+													<td contenteditable="true">1;A;D</td>
+													<td contenteditable="true"></td>
+												</tr>
+												<tr>
+													<td>2 </td>
+													<td contenteditable="true"></td>
+													<td contenteditable="true"></td>
+													<td contenteditable="true"></td>
+													<td contenteditable="true"></td>
+													<td contenteditable="true"></td>
+												</tr>
+												<tr>
+													<td contenteditable="true">3</td>
+													<td contenteditable="true"></td>
+													<td contenteditable="true"></td>
+													<td contenteditable="true"></td>
+													<td contenteditable="true"></td>
+													<td contenteditable="true"></td>
+												</tr>
+												<tr>
+													<td contenteditable="true">4</td>
+													<td contenteditable="true"></td>
+													<td contenteditable="true"></td>
+													<td contenteditable="true"></td>
+													<td contenteditable="true"></td>
+													<td contenteditable="true"></td>
+												</tr>
+												<tr>
+													<td contenteditable="true">5</td>
+													<td contenteditable="true"></td>
+													<td contenteditable="true"></td>
+													<td contenteditable="true"></td>
+													<td contenteditable="true"></td>
+													<td contenteditable="true"></td>
+												</tr>
+											</tbody>
+
+										</table>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col col-6">
+					<div class="col-12">
 						<div class="jumbotron">
 							<!-- <button class="btn btn-primary" onclick="continuar()">Continuar</button> -->
 							<h2>
 								Resultados
 							</h2>
 							<br>
-							<div id="resultado">
-								
+							<div id="resultado" class="tamanho-maximo">
+
 							</div>
 
 

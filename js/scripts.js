@@ -5,7 +5,14 @@ var matriz = []; //matriz da tabela de ação
 var posicao = 1; //posição em que esta o simbolo na fita
 var estado = 1; //estado em que vai ler na tabela de ação
 var listaSimbolos = []; //lista de simbolos que estão na tabela de ação
+var maxAcoes = 0;
+var numAcoes = 0;
 var parar = false;
+var colunaAtual = 0;
+var celula;
+
+var teste = 0;
+
 
 function adcionarLinha(tabela) {
     var tabela2 = document.getElementById(tabela);
@@ -50,27 +57,23 @@ function rodar(tabela) {
 
 
 }
+function runPassoAPasso(){
+
+}
 function run() {
-    var celula;
-    var colunaAtual = 0;
-    var i = 0;
-    posicao = 1;
+    
+    
 
     while (!parar == true) {
-        // var interval = setInterval(function (){
 
-        //     },10000)
-        
 
-        console.log("fita")
-        console.log(fita)
-        console.log("posiçao na fita: " + posicao)
+        // console.log("fita")
+        // console.log(fita)
+        // console.log("posiçao na fita: " + posicao)
         colunaAtual = null;
         colunaAtual = pegarPosicaoSimboloAtual();
-        console.log("posicao na coluna matriz: " + colunaAtual)
-        console.log("posicao na linha matriz: " + estado)
-
-        mostrarNaTela(fita);
+        // console.log("posicao na coluna matriz: " + colunaAtual)
+        // console.log("posicao na linha matriz: " + estado)
 
         if (colunaAtual == null || colunaAtual == undefined || colunaAtual == '' || colunaAtual == "") {
             alert("elemento lido '" + fita[posicao] + "' não foi encontrado na lista de simbolos");
@@ -79,65 +82,90 @@ function run() {
         }
         celula = matriz[estado][colunaAtual];
         if (celula == null || celula == undefined || celula == '' || celula == "") {
-            alert("A Celula lida está vazia, o programa finalizou");
+            mostrarNaTelaFinal(fita);
+            alert("A Celula lida está vazia. O programa foi finalizado");
             parar = true;
             break;
         }
         celula = celula.split(';', 3);
-        // console.log(celula);
+
+        mostrarNaTela(fita, celula);
+
         fazerAcaoCelula(celula)
 
-        // i++;
-        // if (i == 20) {
-        //     parar = true;
-        //     break;
-        // }
 
-        // console.log(fita)
-
-        // parar = true;
+        numAcoes++;
+        if (maxAcoes == numAcoes) {
+            mostrarNaTelaFinal(fita);
+            alert("Chegou ao numero maximo de ações '" + maxAcoes + "'. O programa foi finalizado")
+            parar = true;
+            break;
+        }
 
     }
 
 }
 
-function mostrarNaTela(fita){
+function mostrarNaTela(fita, celula) {
 
     var resultado = document.getElementById('resultado')
     var string = '';
     var div = document.createElement("div");
-    for(var i = 0; i < fita.length; i++){
-        if(posicao == i){
+
+    for (var i = 0; i < fita.length; i++) {
+        if (posicao == i) {
             var aux = "{" + fita[posicao] + "}";
             string = string + aux;
-            console.log(string)
-        }else{
+        } else {
             string = string + fita[i]
-            console.log(string)
         }
     }
 
-    console.log("final")
-    console.log(string)
-    div.innerHTML = "<p>Fita:&nbsp;" + string +" &nbsp;&nbsp;&nbsp;Estado Atual:&nbsp;"+ estado +"</p>";
+    div.innerHTML = "<p>Fita:&nbsp;" + string + "<br>Ação:&nbsp;" + numAcoes + " &nbsp;&nbsp;&nbsp;Estado Atual:&nbsp;" + estado + " &nbsp;&nbsp;&nbsp;Simbolo Atual:&nbsp;" + fita[posicao]
+        + " &nbsp;&nbsp;&nbsp;Novo Estado:&nbsp;" + celula[0] + " &nbsp;&nbsp;&nbsp;Novo Simbolo:&nbsp;" + celula[1] + " &nbsp;&nbsp;&nbsp;Mover :&nbsp;" + celula[2] + "</p>";
+
+
+    resultado.appendChild(div);
+}
+
+function mostrarNaTelaFinal(fita) {
+
+    var resultado = document.getElementById('resultado')
+    var string = '';
+    var div = document.createElement("div");
+
+    for (var i = 0; i < fita.length; i++) {
+        if (posicao == i) {
+            var aux = "{" + fita[posicao] + "}";
+            string = string + aux;
+        } else {
+            string = string + fita[i]
+        }
+    }
+
+
+
+    div.innerHTML = "<p>Fita:&nbsp;" + string + "<br>Ação:&nbsp;" + numAcoes + " &nbsp;&nbsp;&nbsp;Estado Atual:&nbsp;" + estado + " &nbsp;&nbsp;&nbsp;Simbolo Atual:&nbsp;" + fita[posicao]
+        + "</p>";
+
+
     resultado.appendChild(div);
 }
 
 
 function fazerAcaoCelula(celula) {
     estado = celula[0];
- 
+
+
     if (posicao == 0 && celula[1] != fita[posicao]) {
         fita = addInicio(fita);
         posicao++;
-    } else if (posicao == fita.length && celula[2] == 'D') {
+    } else if (posicao == (fita.length - 1) && celula[2] == 'D') {
         fita = addFinal(fita);
     }
-    fita[posicao] = celula[1];
-    //     // console.log(fita)
-    // }
 
-    console.log(celula)
+    fita[posicao] = celula[1];
+
     if (celula[2] == "D") {
         posicao++;
     } else {
@@ -147,20 +175,27 @@ function fazerAcaoCelula(celula) {
 }
 
 function inicializar(tabela) {
-    console.log("Incicio")
+
     matriz = []; //padrão []
     estado = 1; //padrão 1
     algoritmo = document.getElementById('algoritmo').value
+    
     fita = algoritmo;
     fita = transformarFita(fita);
-    console.log(fita);
-    matriz = pegarMatriz(tabela);
-    console.log(matriz);
-    pegarListaDeSimbolos();
-    console.log(listaSimbolos);
-    console.log("Fim Incicio")
+    
+    posicao = 1;
+    celula = null;
+    maxAcoes = 150;
+    numAcoes = 0;
 
-    var teste =document.getElementById('resultado').textContent = '';
+    matriz = pegarMatriz(tabela);
+
+    pegarListaDeSimbolos();
+
+    document.getElementById('resultado').textContent = '';
+
+
+    
 }
 
 function transformarFita(fita) {
