@@ -70,7 +70,7 @@ function run() {
         console.log("posicao na coluna matriz: " + colunaAtual)
         console.log("posicao na linha matriz: " + estado)
 
-        mostrarNaTela(fita)
+        mostrarNaTela(fita);
 
         if (colunaAtual == null || colunaAtual == undefined || colunaAtual == '' || colunaAtual == "") {
             alert("elemento lido '" + fita[posicao] + "' não foi encontrado na lista de simbolos");
@@ -87,11 +87,12 @@ function run() {
         // console.log(celula);
         fazerAcaoCelula(celula)
 
-        i++;
-        if (i == 20) {
-            parar = true;
-            break;
-        }
+        // i++;
+        // if (i == 20) {
+        //     parar = true;
+        //     break;
+        // }
+
         // console.log(fita)
 
         // parar = true;
@@ -103,9 +104,10 @@ function run() {
 function mostrarNaTela(fita){
 
     var resultado = document.getElementById('resultado')
-    var string;
-    for(var i = 0; i <= fita.length; i++){
-        if(fita[posicao] == fita[i]){
+    var string = '';
+    var div = document.createElement("div");
+    for(var i = 0; i < fita.length; i++){
+        if(posicao == i){
             var aux = "{" + fita[posicao] + "}";
             string = string + aux;
             console.log(string)
@@ -114,9 +116,11 @@ function mostrarNaTela(fita){
             console.log(string)
         }
     }
+
     console.log("final")
     console.log(string)
-    resultado.innerHTML = "<p>" + string +"</p>";
+    div.innerHTML = "<p>Fita:&nbsp;" + string +" &nbsp;&nbsp;&nbsp;Estado Atual:&nbsp;"+ estado +"</p>";
+    resultado.appendChild(div);
 }
 
 
@@ -155,6 +159,8 @@ function inicializar(tabela) {
     pegarListaDeSimbolos();
     console.log(listaSimbolos);
     console.log("Fim Incicio")
+
+    var teste =document.getElementById('resultado').textContent = '';
 }
 
 function transformarFita(fita) {

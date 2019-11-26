@@ -17,3 +17,9 @@
  .boder-black{
      border-block-color: black;
  }
+ .input-400{
+     max-width: 400px;
+ }
+ .button-w{
+     width: 125px;
+ }

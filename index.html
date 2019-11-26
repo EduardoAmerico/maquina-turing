@@ -31,7 +31,7 @@
 						<div class="col col-12">
 							<div class="input-group">
 								<h5 class="margin-right-15">Digite o seu algoritmo:</h5>
-								<input class="form-control col-2 margin-right-15" id="algoritmo" type="text"
+								<input class="form-control input-400 margin-right-15" id="algoritmo" type="text"
 									placeholder="Algoritmo">
 								<button class="btn btn-success" onclick="rodar('tadelaDeAcao')">Salvar</button>
 								<!-- <button class="btn btn-outline-primary" onclick="step()">Continuar</button> -->
@@ -49,7 +49,7 @@
 								Tabela de Ação
 							</h2>
 							<br>
-							<di class="row">
+							<div class="row">
 								<div class="margin-right-15">
 									<button class="btn btn-success" onclick="adcionarLinha('tadelaDeAcao')">Adicionar
 										Linha</button>
@@ -58,7 +58,7 @@
 									<button class="btn btn-success" onclick="adcionarCuluna('tadelaDeAcao')">Adicionar
 										Coluna</button>
 								</div>
-							</di>
+							</div>
 							<br>
 							<div class="row">
 								<div class="col col-12 table-responsive">
@@ -113,181 +113,7 @@
 														<td contenteditable="true"></td>
 													</tr>
 												</tbody>
-											<!-- <tbody>
-													<tr>
-														<td>#</td>
-														<td>&gt;</td>
-														<td>_</td>
-														<td>*</td>
-														<td contenteditable="true">A</td>
-														<td contenteditable="true"></td>
-													</tr>
-													<tr>
-														<td>1 </td>
-														<td contenteditable="true">1;&gt;;D</td>
-														<td contenteditable="true">2;_;E</td>
-														<td contenteditable="true">1;A;D</td>
-														<td contenteditable="true">1;A;D</td>
-														<td contenteditable="true"></td>
-													</tr>
-													<tr>
-														<td>2 </td>
-														<td contenteditable="true">3;*;E</td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true">2;*;E</td>
-														<td contenteditable="true"></td>
-													</tr>
-													<tr>
-														<td contenteditable="true">3</td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true">4;&gt;;D</td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-													</tr>
-													<tr>
-														<td contenteditable="true">4</td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-													</tr>
-													<tr>
-														<td contenteditable="true">5</td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-													</tr>
-												</tbody> -->
-											<!-- <tbody>
-													<tr>
-														<td>#</td>
-														<td>&gt;</td>
-														<td>_</td>
-														<td>*</td>
-														<td contenteditable="true">A</td>
-														<td contenteditable="true"></td>
-													</tr>
-													<tr>
-														<td>1 </td>
-														<td contenteditable="true">1;&gt;;D</td>
-														<td contenteditable="true">2;_;E</td>
-														<td contenteditable="true">1;A;D</td>
-														<td contenteditable="true">1;A;D</td>
-														<td contenteditable="true"></td>
-													</tr>
-													<tr>
-														<td>2 </td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true">2;A;D</td>
-														<td contenteditable="true"></td>
-													</tr>
-													<tr>
-														<td contenteditable="true">3</td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-													</tr>
-													<tr>
-														<td contenteditable="true">4</td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-													</tr>
-													<tr>
-														<td contenteditable="true">5</td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-														<td contenteditable="true"></td>
-													</tr>
-												</tbody> -->
-										<!-- <tbody>
-											<tr>
-												<td>#</td>
-												<td>&gt;</td>
-												<td>_</td>
-												<td>*</td>
-												<td contenteditable="true">A</td>
-												<td contenteditable="true"></td>
-											</tr>
-											<tr>
-												<td>1 </td>
-												<td contenteditable="true">1;&gt;;E</td>
-												<td contenteditable="true">2;_;E</td>
-												<td contenteditable="true">1;A;D</td>
-												<td contenteditable="true">1;A;D</td>
-												<td contenteditable="true"></td>
-											</tr>
-											<tr>
-												<td>2 </td>
-												<td contenteditable="true"><br></td>
-												<td contenteditable="true"><span
-														style="background-color: rgb(255, 255, 255);">3;*;E</span></td>
-												<td contenteditable="true"></td>
-												<td contenteditable="true"></td>
-												<td contenteditable="true"></td>
-											</tr>
-											<tr>
-												<td contenteditable="true">3</td>
-												<td contenteditable="true"></td>
-												<td contenteditable="true">4;*;E</td>
-												<td contenteditable="true"></td>
-												<td contenteditable="true"></td>
-												<td contenteditable="true"></td>
-											</tr>
-											<tr>
-												<td contenteditable="true">4</td>
-												<td contenteditable="true"></td>
-												<td contenteditable="true"><span
-														style="background-color: rgb(255, 255, 255);">5;A;E</span></td>
-												<td contenteditable="true"></td>
-												<td contenteditable="true"></td>
-												<td contenteditable="true"></td>
-											</tr>
-											<tr>
-												<td contenteditable="true">5</td>
-												<td contenteditable="true"></td>
-												<td contenteditable="true"></td>
-												<td contenteditable="true"></td>
-												<td contenteditable="true"></td>
-												<td contenteditable="true"></td>
-											</tr>
-										</tbody> -->
-										<!-- <tbody>
-												<tr>
-													<td>#</td>
-													<td>></td>
-													<td>_</td>
-													<td>*</td>
-													<td contenteditable="true">A</td>
-												</tr>
-												<tr>
-													<td>1 </td>
-													<td contenteditable="true">1;>;D</td>
-													<td contenteditable="true">2;_;E</td>
-													<td contenteditable="true">1;A;D</td>
-													<td contenteditable="true">1;A;D</td>
-												</tr>
-												<tr>
-													<td>2 </td>
-													<td contenteditable="true"></td>
-													<td contenteditable="true"></td>
-													<td contenteditable="true"></td>
-													<td contenteditable="true">FIM</td>
-												</tr>
-											</tbody> -->
+											
 									</table>
 								</div>
 							</div>
