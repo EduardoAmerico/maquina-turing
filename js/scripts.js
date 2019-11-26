@@ -60,6 +60,8 @@ function run() {
         // var interval = setInterval(function (){
 
         //     },10000)
+        
+
         console.log("fita")
         console.log(fita)
         console.log("posiçao na fita: " + posicao)
@@ -67,6 +69,9 @@ function run() {
         colunaAtual = pegarPosicaoSimboloAtual();
         console.log("posicao na coluna matriz: " + colunaAtual)
         console.log("posicao na linha matriz: " + estado)
+
+        mostrarNaTela(fita)
+
         if (colunaAtual == null || colunaAtual == undefined || colunaAtual == '' || colunaAtual == "") {
             alert("elemento lido '" + fita[posicao] + "' não foi encontrado na lista de simbolos");
             parar = true;
@@ -94,31 +99,31 @@ function run() {
     }
 
 }
-/**  tabela de acoes:
- * 
- *   # |   >   |   A   |   B   |   C   |
- *   1 | 1 a D | 1 a D | 1 a D | 1 a D |
- *   2 | 1 a D | 1 a D | 1 a D | 1 a D |
- *   3 | 1 a D | 1 a D | 1 a D | 1 a D |
- *   4 | 1 a D | 1 a D | 1 a D | 1 a D |
- * 
- *  
- *                               V
- *                   _  >  A  A  _  B  C  _  A  _
- * posição:          0 +1 +2 +3 +4 +5 +6 +7 +8 ...
- * index arrays      0  1  2  3  4  5  6  7  8 ...
- *            
- */
+
+function mostrarNaTela(fita){
+
+    var resultado = document.getElementById('resultado')
+    var string;
+    for(var i = 0; i <= fita.length; i++){
+        if(fita[posicao] == fita[i]){
+            var aux = "{" + fita[posicao] + "}";
+            string = string + aux;
+            console.log(string)
+        }else{
+            string = string + fita[i]
+            console.log(string)
+        }
+    }
+    console.log("final")
+    console.log(string)
+    resultado.innerHTML = "<p>" + string +"</p>";
+}
+
 
 function fazerAcaoCelula(celula) {
-    estado = celula[0]
-    // if (celula[1] == fita[posicao]) {
-    //     console.log("nao vai trocar")
-    //     // console.log(fita)
-    // }
-    // else {
-    // console.log("vai trocar")
-    if (posicao == 0 && celula[2] == 'E') {
+    estado = celula[0];
+ 
+    if (posicao == 0 && celula[1] != fita[posicao]) {
         fita = addInicio(fita);
         posicao++;
     } else if (posicao == fita.length && celula[2] == 'D') {
