@@ -68,9 +68,38 @@ function startPassoAPasso(tabela) {
     inicializar(tabela);
 
 }
+
+
+function inicializar(tabela) {
+
+    matriz = []; //padrão []
+    estado = 1; //padrão 1
+    algoritmo = document.getElementById('algoritmo').value
+    maxAcoes = document.getElementById('acoes').value
+
+    fita = algoritmo;
+    fita = transformarFita(fita);
+
+    posicao = 1;
+    celula = null;
+    numAcoes = 0;
+    ultimo = 0;
+
+    matriz = pegarMatriz(tabela);
+
+    pegarListaDeSimbolos();
+
+    document.getElementById('resultado').textContent = '';
+
+
+
+}
+
+
 function constinuaPassoAPasso() {
     runPassoAPasso();
 }
+
 function runPassoAPasso() {
 
     // console.log("fita")
@@ -197,31 +226,6 @@ function fazerAcaoCelula(celula) {
 
 }
 
-function inicializar(tabela) {
-
-    matriz = []; //padrão []
-    estado = 1; //padrão 1
-    algoritmo = document.getElementById('algoritmo').value
-    maxAcoes = document.getElementById('acoes').value
-
-    fita = algoritmo;
-    fita = transformarFita(fita);
-
-    posicao = 1;
-    celula = null;
-    numAcoes = 0;
-    ultimo = 0;
-
-    matriz = pegarMatriz(tabela);
-
-    pegarListaDeSimbolos();
-
-    document.getElementById('resultado').textContent = '';
-
-
-
-}
-
 function transformarFita(fita) {
     fita = fita.split('');
     fita = addInicio(fita);
@@ -304,4 +308,12 @@ function exemploVaiEVolta() {
     escreverImput("acoes", 100);
     escreverImput("algoritmo", ">****");
 }
+
+function exemploZerar() {
+    exemplo = "<tr><td>#</td><td>*</td><td>_</td><td>&gt;</td></tr><tr><td>1</td><td contenteditable='true'></td><td contenteditable='true'></td><td contenteditable='true'></td></tr>";
+    escreverExemplo(exemplo);
+    escreverImput("acoes", 100);
+    escreverImput("algoritmo", ">****");
+}
+
 
