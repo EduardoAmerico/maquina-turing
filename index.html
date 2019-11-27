@@ -41,17 +41,42 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<div class="input-group">
+							<div class="input-group" style="margin-bottom: 15px;">
 								<h5 class="margin-right-15 padding-botton-10">Número maximo de ações:</h5>
 								<input class="form-control input-400 margin-right-15" id="acoes" type="text"
-									placeholder="Número de Maximo de Ações">
-								<button class="btn btn-success" onclick="rodar('tadelaDeAcao')">Rodar</button>
+									placeholder="Número de Maximo de Ações" value="250">
+								<button class="btn btn-success margin-right-15"
+									onclick="rodar('tadelaDeAcao')">Rodar</button>
+								<button class="btn btn-success margin-right-15"
+									onclick="startPassoAPasso('tadelaDeAcao')">Start Passo a
+									Passo</button>
+								<button class="btn btn-success" onclick="constinuaPassoAPasso()">Continuar Passo a
+									Passo</button>
 								<!-- <button class="btn btn-outline-primary" onclick="step()">Continuar</button> -->
 
 							</div>
 
 						</div>
+						<div class="row">
+							<div class="col-12">
+
+								<button class="btn btn-success margin-right-15" onclick="exemploSoma()">Exemplo
+									Soma</button>
+								<button class="btn btn-success margin-right-15" onclick="exemploSub()">Exemplo
+									Subtração</button>
+								<button class="btn btn-success margin-right-15" onclick="exemploFrente()">Exemplo
+									Frente</button>
+								<button class="btn btn-success margin-right-15" onclick="exemploAtras()">Exemplo
+									Atrás</button>
+								<button class="btn btn-success margin-right-15" onclick="exemploVaiEVolta()">Exemplo
+									Vai e Volta</button>
+
+
+							</div>
+
+						</div>
 					</div>
+
 
 				</div>
 				<div class="row">
@@ -79,48 +104,12 @@
 											<tbody>
 												<tr>
 													<td>#</td>
-													<td>&gt;</td>
-													<td>_</td>
 													<td>*</td>
-													<td contenteditable="true">A</td>
-													<td contenteditable="true"></td>
+													<td>_</td>
+													<td>&gt;</td>
 												</tr>
 												<tr>
-													<td>1 </td>
-													<td contenteditable="true">1;&gt;;D</td>
-													<td contenteditable="true">1;A;E</td>
-													<td contenteditable="true">1;A;D</td>
-													<td contenteditable="true">1;A;D</td>
-													<td contenteditable="true"></td>
-												</tr>
-												<tr>
-													<td>2 </td>
-													<td contenteditable="true"></td>
-													<td contenteditable="true"></td>
-													<td contenteditable="true"></td>
-													<td contenteditable="true"></td>
-													<td contenteditable="true"></td>
-												</tr>
-												<tr>
-													<td contenteditable="true">3</td>
-													<td contenteditable="true"></td>
-													<td contenteditable="true"></td>
-													<td contenteditable="true"></td>
-													<td contenteditable="true"></td>
-													<td contenteditable="true"></td>
-												</tr>
-												<tr>
-													<td contenteditable="true">4</td>
-													<td contenteditable="true"></td>
-													<td contenteditable="true"></td>
-													<td contenteditable="true"></td>
-													<td contenteditable="true"></td>
-													<td contenteditable="true"></td>
-												</tr>
-												<tr>
-													<td contenteditable="true">5</td>
-													<td contenteditable="true"></td>
-													<td contenteditable="true"></td>
+													<td>1</td>
 													<td contenteditable="true"></td>
 													<td contenteditable="true"></td>
 													<td contenteditable="true"></td>
